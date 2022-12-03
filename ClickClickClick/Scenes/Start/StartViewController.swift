@@ -50,6 +50,7 @@ final class StartViewController: UIViewController {
     @objc
     private func startButtonPressed() {
         startButton.pushAnimate { [weak self] in
+            self?.presenter?.startButtonPressed()
         }
     }
 }
