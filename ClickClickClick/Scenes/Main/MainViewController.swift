@@ -38,6 +38,21 @@ final class MainViewController: UIViewController {
         return button
     }()
     
+    private let clickValueLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = #colorLiteral(red: 0.1540617863, green: 0.3678298798, blue: 0.03155736679, alpha: 1)
+        label.font = UIFont.systemFont(ofSize: 42)
+        label.text = "1000000"
+        return label
+    }()
+    
+    private let blurView: UIVisualEffectView = {
+        let blurView = UIVisualEffectView()
+        blurView.effect = UIBlurEffect(style: .light)
+        blurView.layer.cornerRadius = 12
+        blurView.clipsToBounds = true
+        return blurView
+    }()
     
     // MARK: - LifeCycle
     
@@ -71,7 +86,9 @@ private extension MainViewController {
     func addSubViews() {
         view.addSubviews(
             imageViewBackgroundScreen,
-            mainButton
+            mainButton,
+            blurView,
+            clickValueLabel
         )
     }
     
@@ -88,7 +105,15 @@ private extension MainViewController {
             mainButton.heightAnchor.constraint(equalToConstant: mainButtonHeight),
             mainButton.widthAnchor.constraint(equalToConstant: mainButtonWidth),
             mainButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            mainButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            mainButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            clickValueLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            clickValueLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            
+            blurView.topAnchor.constraint(equalTo: clickValueLabel.topAnchor, constant: 0),
+            blurView.leadingAnchor.constraint(equalTo: clickValueLabel.leadingAnchor, constant: -16),
+            blurView.bottomAnchor.constraint(equalTo: clickValueLabel.bottomAnchor, constant: 0),
+            blurView.trailingAnchor.constraint(equalTo: clickValueLabel.trailingAnchor, constant: 16),
         ])
     }
 }
