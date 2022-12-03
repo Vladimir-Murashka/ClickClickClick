@@ -5,9 +5,14 @@
 //  Created by Swift Learning on 03.12.2022.
 //
 
+import UIKit
+
 // MARK: - MainPresenterProtocol
 
-protocol MainPresenterProtocol: AnyObject {}
+protocol MainPresenterProtocol: AnyObject {
+    func viewDidLoad()
+    func mainButtonPressed()
+}
 
 // MARK: - MainPresenter
 
@@ -18,6 +23,7 @@ final class MainPresenter {
     
     private let sceneBuildManager: Buildable
     private let defaultsStorage: DefaultsManagerable
+    private var clickValueLabel = 0
     
     // MARK: - Initializer
     
@@ -32,4 +38,16 @@ final class MainPresenter {
 
 //MARK: - MainPresenterExtension
 
-extension MainPresenter: MainPresenterProtocol {}
+extension MainPresenter: MainPresenterProtocol {
+    func viewDidLoad() {
+        clickValueLabel = defaultsStorage.fetchObject(type: Int.self, for: .clickValue) ?? 1000000
+        viewController?.updateClickLabel(value: String(clickValueLabel))
+    }
+    
+    func mainButtonPressed() {
+        clickValueLabel -= 1
+        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+        viewController?.updateClickLabel(value: String(clickValueLabel))
+        defaultsStorage.saveObject(clickValueLabel, for: .clickValue)
+    }
+}

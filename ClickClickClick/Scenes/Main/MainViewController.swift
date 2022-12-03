@@ -9,7 +9,9 @@ import UIKit
 
 // MARK: - MainViewProtocol
 
-protocol MainViewProtocol: UIViewController {}
+protocol MainViewProtocol: UIViewController {
+    func updateClickLabel(value: String)
+}
 
 // MARK: - MainViewController
 
@@ -42,7 +44,6 @@ final class MainViewController: UIViewController {
         let label = UILabel()
         label.textColor = #colorLiteral(red: 0.1540617863, green: 0.3678298798, blue: 0.03155736679, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 42)
-        label.text = "1000000"
         return label
     }()
     
@@ -59,20 +60,25 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
+        presenter?.viewDidLoad()
     }
     
     // MARK: - Actions
     @objc
     private func mainButtonPressed() {
         mainButton.pushAnimate { [weak self] in
-            
+            self?.presenter?.mainButtonPressed()
         }
     }
 }
 
 // MARK: - MainViewProtocol Impl
 
-extension MainViewController: MainViewProtocol {}
+extension MainViewController: MainViewProtocol {
+    func updateClickLabel(value: String) {
+        clickValueLabel.text = value
+    }
+}
 
 // MARK: - PrivateMethods
 
