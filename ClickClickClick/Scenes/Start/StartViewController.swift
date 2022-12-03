@@ -18,6 +18,26 @@ final class StartViewController: UIViewController {
     
     // MARK: - PrivateProperties
     
+    private let imageViewBackgroundScreen: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "startBackground")
+        return imageView
+    }()
+    
+    private lazy var startButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setBackgroundImage(
+            UIImage(named: "startButton"),
+            for: .normal
+        )
+        button.addTarget(
+            self,
+            action: #selector(startButtonPressed),
+            for: .touchUpInside
+        )
+        return button
+    }()
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -27,6 +47,11 @@ final class StartViewController: UIViewController {
     
     // MARK: - Actions
 
+    @objc
+    private func startButtonPressed() {
+        startButton.pushAnimate { [weak self] in
+        }
+    }
 }
 
 // MARK: - StartViewProtocol Impl
@@ -37,14 +62,24 @@ extension StartViewController: StartViewProtocol {}
 
 private extension StartViewController {
     func setupViewController() {
-        view.backgroundColor = .orange
         addSubViews()
         setupConstraints()
     }
     
-    func addSubViews() {}
+    func addSubViews() {
+        view.addSubviews(
+            imageViewBackgroundScreen,
+            startButton
+        )
+    }
     
     func setupConstraints() {
-        NSLayoutConstraint.activate([])
+        NSLayoutConstraint.activate([
+            imageViewBackgroundScreen.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageViewBackgroundScreen.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            startButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
 }
