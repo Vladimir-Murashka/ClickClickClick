@@ -10,7 +10,13 @@ protocol Buildable {
     func buildMainScreen() -> MainViewController
 }
 
-final class SceneBuildManager {}
+final class SceneBuildManager {
+    private let defaultsManager: DefaultsManagerable
+    
+    init() {
+        defaultsManager = DefaultsManager()
+    }
+}
 
 extension SceneBuildManager: Buildable {
     func buildStartScreen() -> StartViewController {
@@ -25,7 +31,10 @@ extension SceneBuildManager: Buildable {
     
     func buildMainScreen() -> MainViewController {
         let viewController = MainViewController()
-        let presenter = MainPresenter(sceneBuildManager: self)
+        let presenter = MainPresenter(
+            sceneBuildManager: self,
+            defaultsStorage: defaultsManager
+        )
         
         viewController.presenter = presenter
         presenter.viewController = viewController
