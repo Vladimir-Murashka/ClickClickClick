@@ -17,11 +17,16 @@ final class MainPresenter {
     // MARK: - PrivateProperties
     
     private let sceneBuildManager: Buildable
+    private let defaultsStorage: DefaultsManagerable
     
     // MARK: - Initializer
     
-    init(sceneBuildManager: Buildable) {
+    init(
+        sceneBuildManager: Buildable,
+        defaultsStorage: DefaultsManagerable
+    ) {
         self.sceneBuildManager = sceneBuildManager
+        self.defaultsStorage = defaultsStorage
     }
 }
 
