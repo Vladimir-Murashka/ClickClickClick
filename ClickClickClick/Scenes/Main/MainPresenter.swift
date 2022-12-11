@@ -25,7 +25,7 @@ final class MainPresenter {
     private let defaultsStorage: DefaultsManagerable
     private let audioManager: AudioManagerable
     private var timer = Timer()
-    private var timerValue: Double = 5
+    private var timerValue: Double = 3
     private var clickValueLabel = 0
     private var flag = false
     
