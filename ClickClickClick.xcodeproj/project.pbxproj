@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2244D32429460825001D772F /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244D32329460825001D772F /* AudioManager.swift */; };
+		2244D32629460B2E001D772F /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2244D32529460B2D001D772F /* test.mp3 */; };
 		22F3FA5E293BC26E006EC3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3FA5D293BC26E006EC3B1 /* AppDelegate.swift */; };
 		22F3FA60293BC26E006EC3B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3FA5F293BC26E006EC3B1 /* SceneDelegate.swift */; };
 		22F3FA67293BC272006EC3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F3FA66293BC272006EC3B1 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2244D32329460825001D772F /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		2244D32529460B2D001D772F /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = test.mp3; path = ../../../../../../Downloads/test.mp3; sourceTree = "<group>"; };
 		22F3FA5A293BC26E006EC3B1 /* ClickClickClick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickClickClick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F3FA5D293BC26E006EC3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22F3FA5F293BC26E006EC3B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 		22F3FA72293BC494006EC3B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2244D32529460B2D001D772F /* test.mp3 */,
 				22F3FA66293BC272006EC3B1 /* Assets.xcassets */,
 				22F3FA68293BC272006EC3B1 /* LaunchScreen.storyboard */,
 			);
@@ -108,6 +113,7 @@
 			children = (
 				22F3FA82293BC681006EC3B1 /* SceneBuildManager.swift */,
 				22F3FA84293BCA5B006EC3B1 /* UserDefaultManager.swift */,
+				2244D32329460825001D772F /* AudioManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 			files = (
 				22F3FA6A293BC272006EC3B1 /* LaunchScreen.storyboard in Resources */,
 				22F3FA67293BC272006EC3B1 /* Assets.xcassets in Resources */,
+				2244D32629460B2E001D772F /* test.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +239,7 @@
 				22F3FA60293BC26E006EC3B1 /* SceneDelegate.swift in Sources */,
 				22F3FA7B293BC55F006EC3B1 /* StartViewController.swift in Sources */,
 				22F3FA87293BCE02006EC3B1 /* UIView.swift in Sources */,
+				2244D32429460825001D772F /* AudioManager.swift in Sources */,
 				22F3FA7F293BC579006EC3B1 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,9 +12,11 @@ protocol Buildable {
 
 final class SceneBuildManager {
     private let defaultsManager: DefaultsManagerable
+    private let audioManager: AudioManagerable
     
     init() {
         defaultsManager = DefaultsManager()
+        audioManager = AudioManager()
     }
 }
 
@@ -33,7 +35,8 @@ extension SceneBuildManager: Buildable {
         let viewController = MainViewController()
         let presenter = MainPresenter(
             sceneBuildManager: self,
-            defaultsStorage: defaultsManager
+            defaultsStorage: defaultsManager,
+            audioManager: audioManager
         )
         
         viewController.presenter = presenter
