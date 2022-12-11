@@ -27,6 +27,7 @@ final class MainPresenter {
     private var timer = Timer()
     private var timerValue: Double = 5
     private var clickValueLabel = 0
+    private var flag = false
     
     // MARK: - Initializer
     
@@ -53,11 +54,12 @@ extension MainPresenter: MainPresenterProtocol {
     
     func mainButtonPressed() {
         clickValueLabel -= 1
-        if timerValue == 0 {
+        if flag == true {
             audioManager.play()
             startTimer()
+            flag = false
         }
-        timerValue += 0.5
+        timerValue += 0.3
         print(timerValue)
         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
         viewController?.updateClickLabel(value: String(clickValueLabel))
@@ -82,6 +84,7 @@ private extension MainPresenter {
         if timerValue <= 0 {
             audioManager.pause()
             timer.invalidate()
+            flag = true
         }
         print(timerValue)
     }

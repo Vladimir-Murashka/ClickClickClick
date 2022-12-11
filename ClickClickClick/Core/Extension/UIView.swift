@@ -22,7 +22,7 @@ extension UIView {
     
     func pushAnimate(_ completion: (() -> Void)?) {
         UIView.animate(
-            withDuration: 0.05,
+            withDuration: 0.03,
             animations: {
                 self.transform = CGAffineTransform(
                     scaleX: 0.9,
@@ -30,7 +30,7 @@ extension UIView {
                 )
             },
             completion: { _ in
-                UIView.animate(withDuration: 0.05) {
+                UIView.animate(withDuration: 0.03) {
                     self.transform = CGAffineTransform.identity
                 } completion: { _ in
                     completion?()
