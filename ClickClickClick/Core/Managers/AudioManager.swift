@@ -21,8 +21,14 @@ final class AudioManager {
 }
 
 extension AudioManager: AudioManagerable {
-    func loadSound(forResource: String?, withExtension: String?) {
-        guard let url = Bundle.main.url(forResource: forResource, withExtension: withExtension) else {
+    func loadSound(
+        forResource: String?,
+        withExtension: String?
+    ) {
+        guard let url = Bundle.main.url(
+            forResource: forResource,
+            withExtension: withExtension
+        ) else {
             return
         }
         
