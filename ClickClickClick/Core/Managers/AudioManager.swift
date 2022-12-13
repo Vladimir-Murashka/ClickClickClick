@@ -41,6 +41,7 @@ extension AudioManager: AudioManagerable {
             try AVAudioSession.sharedInstance().setActive(true)
             
             musicPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            musicPlayer?.numberOfLoops = 999999
         } catch {
             fatalError()
         }
