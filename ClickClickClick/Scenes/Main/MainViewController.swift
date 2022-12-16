@@ -61,10 +61,15 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         setupViewController()
         presenter?.viewDidLoad()
-        print(self.view!.bounds.height)
-        print(self.view!.bounds.width)
-        print(view!.bounds.width / 5.496)
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if view.bounds.width < 450 {
+            clickValueLabel.font = UIFont.systemFont(ofSize: 42)
+        } else {
+            clickValueLabel.font = UIFont.systemFont(ofSize: 82)
+        }
     }
     
     // MARK: - Actions
@@ -73,8 +78,6 @@ final class MainViewController: UIViewController {
         mainButton.pushAnimate { [weak self] in
             self?.presenter?.mainButtonPressed()
         }
-        print(mainButton.bounds.width)
-        print(mainButton.bounds.height)
     }
 }
 
@@ -107,7 +110,7 @@ private extension MainViewController {
     func setupConstraints() {
         
         
-        let mainButtonWidth: CGFloat = view!.bounds.width / 1.572
+        let mainButtonWidth: CGFloat = view.bounds.width / 1.572
         let mainButtonHeight: CGFloat = mainButtonWidth / (1000 / 952)
         
         
@@ -124,9 +127,6 @@ private extension MainViewController {
             
             clickValueLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             clickValueLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-//            clickValueLabel.leadingAnchor.constraint(equalTo: clickValueLabel.leadingAnchor, constant: -16),
-//            clickValueLabel.bottomAnchor.constraint(equalTo: clickValueLabel.bottomAnchor, constant: 0),
-//            clickValueLabel.trailingAnchor.constraint(equalTo: clickValueLabel.trailingAnchor, constant: 16),
             
             
             blurView.topAnchor.constraint(equalTo: clickValueLabel.topAnchor, constant: 0),
