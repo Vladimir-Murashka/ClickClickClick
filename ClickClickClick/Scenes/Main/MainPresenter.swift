@@ -24,6 +24,7 @@ final class MainPresenter {
     private let sceneBuildManager: Buildable
     private let defaultsStorage: DefaultsManagerable
     private let audioManager: AudioManagerable
+    private let alertManager: AlertManagerable
     private var timer = Timer()
     private var timerValue: Double = 3
     private var clickValueLabel = 0
@@ -34,11 +35,13 @@ final class MainPresenter {
     init(
         sceneBuildManager: Buildable,
         defaultsStorage: DefaultsManagerable,
-        audioManager: AudioManagerable
+        audioManager: AudioManagerable,
+        alertManager: AlertManagerable
     ) {
         self.sceneBuildManager = sceneBuildManager
         self.defaultsStorage = defaultsStorage
         self.audioManager = audioManager
+        self.alertManager = alertManager
     }
 }
 
@@ -47,13 +50,14 @@ final class MainPresenter {
 extension MainPresenter: MainPresenterProtocol {
     func viewDidLoad() {
         setupAudio()
-        clickValueLabel = defaultsStorage.fetchObject(type: Int.self, for: .clickValue) ?? 10000
+        clickValueLabel = defaultsStorage.fetchObject(type: Int.self, for: .clickValue) ?? 100_000
         viewController?.updateClickLabel(value: String(clickValueLabel))
         startTimer()
     }
     
     func mainButtonPressed() {
         clickValueLabel -= 1
+        setupAlertController()
         if flag == true {
             audioManager.play()
             startTimer()
@@ -64,6 +68,7 @@ extension MainPresenter: MainPresenterProtocol {
         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
         viewController?.updateClickLabel(value: String(clickValueLabel))
         defaultsStorage.saveObject(clickValueLabel, for: .clickValue)
+        
     }
 }
 
@@ -92,5 +97,19 @@ private extension MainPresenter {
     func setupAudio() {
         audioManager.loadSound(forResource: "test", withExtension: "mp3")
         audioManager.play()
+    }
+    
+    func setupAlertController() {
+        if clickValueLabel == 0 {
+            alertManager.alert(
+                viewController: viewController,
+                title: "Поздравляем!!!",
+                message: "Вы молодец, в том же духе!",
+                firstButtonTitle: "Перезапустить") {
+                    self.clickValueLabel = 100_000
+                    self.defaultsStorage.saveObject(self.clickValueLabel, for: .clickValue)
+                    self.viewController?.updateClickLabel(value: String(self.clickValueLabel))
+                }
+        }
     }
 }
