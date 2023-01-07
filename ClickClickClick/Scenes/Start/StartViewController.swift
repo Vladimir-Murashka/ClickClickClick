@@ -18,27 +18,6 @@ final class StartViewController: UIViewController {
     
     // MARK: - PrivateProperties
     
-    private let imageViewBackgroundScreen: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "startBackground")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    
-    private lazy var startButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setBackgroundImage(
-            UIImage(named: "startButton"),
-            for: .normal
-        )
-        button.addTarget(
-            self,
-            action: #selector(startButtonPressed),
-            for: .touchUpInside
-        )
-        return button
-    }()
-    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -48,12 +27,6 @@ final class StartViewController: UIViewController {
     
     // MARK: - Actions
 
-    @objc
-    private func startButtonPressed() {
-        startButton.pushAnimate { [weak self] in
-            self?.presenter?.startButtonPressed()
-        }
-    }
 }
 
 // MARK: - StartViewProtocol Impl
@@ -68,23 +41,9 @@ private extension StartViewController {
         setupConstraints()
     }
     
-    func addSubViews() {
-        view.addSubviews(
-            imageViewBackgroundScreen,
-            startButton
-        )
-    }
+    func addSubViews() {}
     
     func setupConstraints() {
-        NSLayoutConstraint.activate([
-//            imageViewBackgroundScreen.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageViewBackgroundScreen.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            imageViewBackgroundScreen.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageViewBackgroundScreen.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            
-            
-            startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            startButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
+        NSLayoutConstraint.activate([])
     }
 }
