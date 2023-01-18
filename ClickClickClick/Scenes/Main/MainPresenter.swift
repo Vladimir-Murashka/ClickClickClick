@@ -50,7 +50,8 @@ final class MainPresenter {
 extension MainPresenter: MainPresenterProtocol {
     func viewDidLoad() {
         setupAudio()
-        clickValueLabel = defaultsStorage.fetchObject(type: Int.self, for: .clickValue) ?? 100_000
+        clickValueLabel = defaultsStorage.fetchObject(type: Int.self,
+                                                      for: .clickValue) ?? 100_000
         viewController?.updateClickLabel(value: String(clickValueLabel))
         startTimer()
     }

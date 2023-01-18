@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B2B11BD297872DA00FFC896 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1B2B11BC297872DA00FFC896 /* test.mp3 */; };
 		223CC5452969973A008D3F07 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223CC54429699739008D3F07 /* AlertManager.swift */; };
 		2244D32429460825001D772F /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244D32329460825001D772F /* AudioManager.swift */; };
-		2244D32629460B2E001D772F /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2244D32529460B2D001D772F /* test.mp3 */; };
 		22F3FA5E293BC26E006EC3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3FA5D293BC26E006EC3B1 /* AppDelegate.swift */; };
 		22F3FA60293BC26E006EC3B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3FA5F293BC26E006EC3B1 /* SceneDelegate.swift */; };
 		22F3FA67293BC272006EC3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F3FA66293BC272006EC3B1 /* Assets.xcassets */; };
@@ -24,10 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B2B11BC297872DA00FFC896 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = test.mp3; path = ../../../../Downloads/test.mp3; sourceTree = "<group>"; };
 		223CC54429699739008D3F07 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		2244D32329460825001D772F /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
-		2244D32529460B2D001D772F /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = test.mp3; path = ../../../../../../Downloads/test.mp3; sourceTree = "<group>"; };
-		22F3FA5A293BC26E006EC3B1 /* ClickClickClick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickClickClick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F3FA5A293BC26E006EC3B1 /* Just Click!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Click!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F3FA5D293BC26E006EC3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22F3FA5F293BC26E006EC3B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		22F3FA66293BC272006EC3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		22F3FA5B293BC26E006EC3B1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22F3FA5A293BC26E006EC3B1 /* ClickClickClick.app */,
+				22F3FA5A293BC26E006EC3B1 /* Just Click!.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 		22F3FA72293BC494006EC3B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2244D32529460B2D001D772F /* test.mp3 */,
+				1B2B11BC297872DA00FFC896 /* test.mp3 */,
 				22F3FA66293BC272006EC3B1 /* Assets.xcassets */,
 				22F3FA68293BC272006EC3B1 /* LaunchScreen.storyboard */,
 			);
@@ -180,7 +180,7 @@
 			);
 			name = ClickClickClick;
 			productName = ClickClickClick;
-			productReference = 22F3FA5A293BC26E006EC3B1 /* ClickClickClick.app */;
+			productReference = 22F3FA5A293BC26E006EC3B1 /* Just Click!.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -223,7 +223,7 @@
 			files = (
 				22F3FA6A293BC272006EC3B1 /* LaunchScreen.storyboard in Resources */,
 				22F3FA67293BC272006EC3B1 /* Assets.xcassets in Resources */,
-				2244D32629460B2E001D772F /* test.mp3 in Resources */,
+				1B2B11BD297872DA00FFC896 /* test.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,11 +383,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H456X98Q5T;
+				DEVELOPMENT_TEAM = B22MD3V3UZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ClickClickClick/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -396,8 +397,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = holog.ClickClickClick;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MV23.JustClick;
+				PRODUCT_NAME = "Just Click!";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -414,11 +415,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H456X98Q5T;
+				DEVELOPMENT_TEAM = B22MD3V3UZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ClickClickClick/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -427,8 +429,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = holog.ClickClickClick;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MV23.JustClick;
+				PRODUCT_NAME = "Just Click!";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
