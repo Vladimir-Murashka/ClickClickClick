@@ -12,6 +12,7 @@ import UIKit
 protocol MainPresenterProtocol: AnyObject {
     func viewDidLoad()
     func mainButtonPressed()
+    func changeThemeButtonPressed()
 }
 
 // MARK: - MainPresenter
@@ -70,6 +71,10 @@ extension MainPresenter: MainPresenterProtocol {
         viewController?.updateClickLabel(value: String(clickValueLabel))
         defaultsStorage.saveObject(clickValueLabel, for: .clickValue)
         
+    }
+    
+    func changeThemeButtonPressed() {
+        self.viewController?.navigationController?.popViewController(animated: true)
     }
 }
 
