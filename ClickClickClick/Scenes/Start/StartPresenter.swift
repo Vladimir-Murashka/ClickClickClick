@@ -7,7 +7,9 @@
 
 // MARK: - StartPresenterProtocol
 
-protocol StartPresenterProtocol: AnyObject {}
+protocol StartPresenterProtocol: AnyObject {
+    func newYearButtonPressed()
+}
 
 // MARK: - StartPresenter
 
@@ -27,4 +29,9 @@ final class StartPresenter {
 
 //MARK: - StartPresenterExtension
 
-extension StartPresenter: StartPresenterProtocol {}
+extension StartPresenter: StartPresenterProtocol {
+    func newYearButtonPressed() {
+        let viewController = sceneBuildManager.buildMainScreen()
+        self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+    }
+}
