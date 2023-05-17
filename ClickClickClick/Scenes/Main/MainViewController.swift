@@ -112,7 +112,7 @@ private extension MainViewController {
         
         let mainButtonWidth: CGFloat = view.bounds.width / 1.572
         let mainButtonHeight: CGFloat = mainButtonWidth / (1000 / 952)
-        
+        print(mainButtonWidth, mainButtonHeight)
         
         NSLayoutConstraint.activate([
             imageViewBackgroundScreen.topAnchor.constraint(equalTo: view.topAnchor),
