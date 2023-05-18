@@ -47,6 +47,7 @@ final class StartViewController: UIViewController {
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
+        presenter?.viewDidLoad() 
         super.viewDidLoad()
         setupViewController()
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B2B11BD297872DA00FFC896 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1B2B11BC297872DA00FFC896 /* test.mp3 */; };
+		1BE8511C2A16B07500196A4E /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8511B2A16B07500196A4E /* NotificationService.swift */; };
 		223CC5452969973A008D3F07 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223CC54429699739008D3F07 /* AlertManager.swift */; };
 		2244D32429460825001D772F /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244D32329460825001D772F /* AudioManager.swift */; };
 		22F3FA5E293BC26E006EC3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3FA5D293BC26E006EC3B1 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		1B2B11BC297872DA00FFC896 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = test.mp3; path = ../../../../Downloads/test.mp3; sourceTree = "<group>"; };
+		1BE8511B2A16B07500196A4E /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		223CC54429699739008D3F07 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		2244D32329460825001D772F /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		22F3FA5A293BC26E006EC3B1 /* Just Click!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Click!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BE8511A2A16B05800196A4E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1BE8511B2A16B07500196A4E /* NotificationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		22F3FA51293BC26E006EC3B1 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		22F3FA73293BC4B6006EC3B1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1BE8511A2A16B05800196A4E /* Services */,
 				22F3FA76293BC4FD006EC3B1 /* Entities */,
 				22F3FA75293BC4F3006EC3B1 /* Extension */,
 				22F3FA74293BC4C7006EC3B1 /* Managers */,
@@ -238,6 +249,7 @@
 				223CC5452969973A008D3F07 /* AlertManager.swift in Sources */,
 				22F3FA5E293BC26E006EC3B1 /* AppDelegate.swift in Sources */,
 				22F3FA85293BCA5B006EC3B1 /* UserDefaultManager.swift in Sources */,
+				1BE8511C2A16B07500196A4E /* NotificationService.swift in Sources */,
 				22F3FA81293BC584006EC3B1 /* MainPresenter.swift in Sources */,
 				22F3FA7D293BC56C006EC3B1 /* StartPresenter.swift in Sources */,
 				22F3FA60293BC26E006EC3B1 /* SceneDelegate.swift in Sources */,
