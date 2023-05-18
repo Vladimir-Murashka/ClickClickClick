@@ -8,6 +8,7 @@
 // MARK: - StartPresenterProtocol
 
 protocol StartPresenterProtocol: AnyObject {
+    func viewDidLoad()
     func newYearButtonPressed()
 }
 
@@ -30,6 +31,10 @@ final class StartPresenter {
 //MARK: - StartPresenterExtension
 
 extension StartPresenter: StartPresenterProtocol {
+    func viewDidLoad() {
+        NotificationService.sharedInstance.authorizeNotification()
+        NotificationService.sharedInstance.sendNotification()
+    }
     func newYearButtonPressed() {
         let viewController = sceneBuildManager.buildMainScreen()
         self.viewController?.navigationController?.pushViewController(viewController, animated: true)
